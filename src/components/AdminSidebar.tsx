@@ -135,6 +135,7 @@ const DivTwo = ({ location }: { location: Location }) => (
 
 const DivThree = ({ location }: { location: Location }) => {
   const [admin,setAdmin]=useAdmin()
+  
   const LogOut=async()=>{
     try {
       const res=await fetch(`${server}/api/v1/admin-logout`,{method:'GET',credentials:'include'});
@@ -149,6 +150,7 @@ const DivThree = ({ location }: { location: Location }) => {
   }
   return (
   <div>
+    <span style={{display:'hidden'}}>{admin}</span>
     <h5>Apps</h5>
     <ul>
       {/* <Li
